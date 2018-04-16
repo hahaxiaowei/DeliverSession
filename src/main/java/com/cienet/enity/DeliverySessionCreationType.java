@@ -1,5 +1,7 @@
 package com.cienet.enity;
 
+import lombok.Data;
+
 import javax.xml.bind.annotation.*;
 
 /**
@@ -17,6 +19,7 @@ import javax.xml.bind.annotation.*;
         "startTime",
         "stopTime"
 })
+@Data
 public class DeliverySessionCreationType {
 
     @XmlElement(name = "DeliverySessionId")

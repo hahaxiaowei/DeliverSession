@@ -1,4 +1,4 @@
-package com.cienet.HttpEnity;
+package com.cienet.httpenity;
 
 import io.netty.handler.codec.http.FullHttpRequest;
 import lombok.Data;
@@ -17,5 +17,21 @@ public class HttpXmlRequest {
     public HttpXmlRequest(FullHttpRequest request, Object body) {
         this.body = body;
         this.request = request;
+    }
+
+    public FullHttpRequest getRequest() {
+        return request;
+    }
+
+    public void setRequest(FullHttpRequest request) {
+        this.request = request;
+    }
+
+    public Object getBody() {
+        return body;
+    }
+
+    public void setBody(Object body) {
+        this.body = body;
     }
 }

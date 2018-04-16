@@ -42,8 +42,16 @@ public class ObjectFactory {
      * Create an instance of {@link DeliverySessionCreationType }
      *
      */
-    public DeliverySessionCreationType createDeliverySessionCreationType() {
+    public static DeliverySessionCreationType createDeliverySessionCreationType() {
         return new DeliverySessionCreationType();
+    }
+
+    public static DeliverySessionCreationType createDeliverySessionCreationType(long deliverySessionId){
+        DeliverySessionCreationType deliverySessionCreationType = new DeliverySessionCreationType();
+        deliverySessionCreationType.setDeliverySessionId(deliverySessionId);
+        deliverySessionCreationType.setAction(ActionType.START);
+        deliverySessionCreationType.setVersion("01");
+        return deliverySessionCreationType;
     }
 
     /**
@@ -51,7 +59,7 @@ public class ObjectFactory {
      *
      */
     @XmlElementDecl(namespace = "", name = "DeliverySession")
-    public JAXBElement<DeliverySessionCreationType> createDeliverySession(DeliverySessionCreationType value) {
+    public static JAXBElement<DeliverySessionCreationType> createDeliverySession(DeliverySessionCreationType value) {
         return new JAXBElement<DeliverySessionCreationType>(_DeliverySession_QNAME, DeliverySessionCreationType.class, null, value);
     }
 }
